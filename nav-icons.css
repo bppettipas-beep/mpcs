@@ -1,0 +1,15 @@
+header nav{gap:8px}
+header nav a{display:grid;grid-template-columns:30px 0;align-items:center;gap:0;width:44px;min-height:44px;padding:0 7px;overflow:hidden;will-change:width;transition:width .22s ease,grid-template-columns .22s ease,gap .22s ease,background .18s ease,color .18s ease}
+header nav a .nav-raster-icon{display:block;width:25px;height:25px;object-fit:contain;justify-self:center}
+header nav a span{white-space:nowrap;opacity:0;transform:translateX(-6px);pointer-events:none;transition:opacity .14s ease,transform .18s ease}
+header nav a:hover{width:116px;grid-template-columns:30px 68px;gap:7px;background:#0d1b21}
+header nav a:hover span{opacity:1;transform:none}
+.join-link{display:grid;grid-template-columns:31px 0 0;align-items:center;gap:0;width:46px;min-height:44px;padding:0 7px;overflow:hidden;will-change:width;transition:width .22s ease,grid-template-columns .22s ease,gap .22s ease,background .18s ease,color .18s ease}
+.join-link .nav-raster-icon{display:block;width:26px;height:26px;object-fit:contain}
+.join-link span,.join-link b{white-space:nowrap;opacity:0;transform:translateX(-6px);pointer-events:none;transition:opacity .14s ease,transform .18s ease}
+.join-link:hover{width:148px;grid-template-columns:31px 88px 12px;gap:5px;background:#0d1b21}
+.join-link:hover span,.join-link:hover b{opacity:1;transform:none}
+header nav a:focus-visible,.join-link:focus-visible{outline:2px solid var(--cyan);outline-offset:2px;background:#0d1b21}
+.menu .nav-raster-icon{display:block;width:30px;height:30px;object-fit:contain}
+@media(max-width:800px){header nav{gap:8px}header nav a,header nav a:hover,header nav a:focus-visible{display:grid;grid-template-columns:30px 1fr;gap:10px;width:100%;min-height:44px;padding:4px 0;background:transparent;overflow:visible}header nav a span,header nav a:hover span,header nav a:focus-visible span{opacity:1;transform:none}.join-link,.join-link:hover,.join-link:focus-visible{display:flex;width:auto;min-height:0;padding:0;background:transparent;overflow:visible}.join-link span,.join-link b,.join-link:hover span,.join-link:hover b,.join-link:focus-visible span,.join-link:focus-visible b{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){header nav a,header nav a span,.join-link,.join-link span,.join-link b{transition:none}}

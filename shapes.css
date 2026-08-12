@@ -1,0 +1,18 @@
+@import url('footer.css');
+@import url('nav-icons.css');
+/* MPCS shape language: structural rectangles + competitive cut corners */
+.primary{clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%)}
+.primary{padding-left:25px;padding-right:25px}.primary:hover{transform:translateY(-2px)}
+.filters button,.tabs button{clip-path:polygon(7px 0,100% 0,calc(100% - 7px) 100%,0 100%);padding-left:17px;padding-right:17px}
+.home-next{clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,24px 100%,0 calc(100% - 24px));border-left:0;background:linear-gradient(120deg,#0e1b21,#091318)}
+.home-next:before{content:"";width:3px;align-self:stretch;background:var(--cyan);position:absolute;left:0;top:0;bottom:0}.home-next{position:relative}
+.prize{clip-path:polygon(12px 0,100% 0,100% 100%,0 100%,0 12px)}
+.season-numbers,.stat-summary{clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px))}
+.team-card{clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,0 100%)}
+.team-card:nth-child(even){clip-path:polygon(14px 0,100% 0,100% 100%,0 100%,0 14px)}
+.badge{clip-path:polygon(50% 0,100% 22%,92% 82%,50% 100%,8% 82%,0 22%);border:0;background:#13252d}
+.empty-state{clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,22px 100%,0 calc(100% - 22px))}
+.admin-link{clip-path:polygon(7px 0,100% 0,calc(100% - 7px) 100%,0 100%);padding-left:14px;padding-right:14px}
+input,textarea,select{border-left:2px solid #2b414a}input:focus,textarea:focus,select:focus{border-left-color:var(--cyan)}
+@media(max-width:520px){.home-next,.empty-state{clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,0 100%)}.team-card,.team-card:nth-child(even){clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%)}}
+.discord-bar{min-height:42px;background:#5865f2;color:#fff;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:25px;padding:0 max(24px,4vw);text-decoration:none;position:relative;z-index:20}.discord-bar b{font:800 14px var(--head);letter-spacing:1.2px}.discord-bar span{font-size:10px;opacity:.82}.discord-bar strong{font-size:11px;letter-spacing:.8px}.discord-bar:hover{background:#6874f5}.footer-discord{background:#5865f2;color:white!important;text-decoration:none;padding:11px 20px;font-weight:700;clip-path:polygon(9px 0,100% 0,calc(100% - 9px) 100%,0 100%)}.discord-home-card{max-width:1132px;margin:0 auto 34px;background:linear-gradient(110deg,#5865f2,#424bb8);padding:42px 48px;display:grid;grid-template-columns:1fr auto;align-items:center;clip-path:polygon(0 0,calc(100% - 26px) 0,100% 26px,100% 100%,26px 100%,0 calc(100% - 26px));position:relative;overflow:hidden}.discord-home-card:after{content:'DISCORD';position:absolute;right:18%;bottom:-50px;font:900 140px var(--head);opacity:.08}.discord-home-card span{font-size:9px;letter-spacing:2px}.discord-home-card h2{font-size:45px;margin:8px 0}.discord-home-card p{margin:0;opacity:.78}.discord-home-card a{background:#fff;color:#3d46ad;text-decoration:none;padding:16px 24px;font-weight:800;z-index:1;clip-path:polygon(9px 0,100% 0,calc(100% - 9px) 100%,0 100%)}@media(max-width:650px){.discord-bar{grid-template-columns:1fr auto;gap:8px;padding-top:9px;padding-bottom:9px}.discord-bar span{display:none}.discord-bar b{font-size:11px}.discord-bar strong{font-size:9px}.discord-home-card{margin:0 16px 30px;padding:30px 24px;grid-template-columns:1fr;gap:22px}.discord-home-card h2{font-size:36px}.discord-home-card a{justify-self:start}}
