@@ -125,12 +125,12 @@ button.game-team:focus-visible strong {
 
 .player-drawer .match-roster-list img {
   width: 46px;
-  height: 46px;
+  height: 64px;
   border: 1px solid rgb(0 0 0 / 22%);
   background: var(--cyan);
   image-rendering: pixelated;
   mix-blend-mode: screen;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 @media (max-width: 620px) {
@@ -147,8 +147,9 @@ button.game-team:focus-visible strong {
   }
 }
 
-.player-drawer .match-roster-list img.known-player {
-  display: none;
+.player-drawer .match-roster-list img.minecraft-player,
+.player-drawer .match-roster-list img.default-player {
+  mix-blend-mode: normal;
 }
 
 .player-drawer .match-roster-list small,
