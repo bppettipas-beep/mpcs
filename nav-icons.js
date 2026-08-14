@@ -10,4 +10,5 @@
   if(favicon)favicon.href='images/mpcs-icon-simple.png';
   const menu=document.querySelector('.menu');
   if(menu)menu.innerHTML='<img class="nav-raster-icon" src="images/nav-menu.png" alt="">';
+  document.querySelectorAll('a[href="admin.html"],.footer-admin').forEach(link=>link.remove());
 })();
