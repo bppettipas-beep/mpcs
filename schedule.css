@@ -68,8 +68,25 @@ button.game-team:focus-visible strong {
 .player-drawer .match-roster-list p {
   min-width: 0;
   margin: 0;
-  padding: 11px;
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  align-items: center;
+  gap: 9px;
+  padding: 8px;
   background: var(--cyan);
+}
+
+.player-drawer .match-roster-list img {
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgb(0 0 0 / 22%);
+  background: #05090b;
+  image-rendering: pixelated;
+  object-fit: cover;
+}
+
+.player-drawer .match-roster-list img.known-player {
+  display: none;
 }
 
 .player-drawer .match-roster-list small,
