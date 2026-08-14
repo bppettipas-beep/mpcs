@@ -1,0 +1,48 @@
+.match.match-game {
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.match.match-game:hover {
+  transform: translateY(-3px);
+  border-color: #08d9ea !important;
+  box-shadow: 0 12px 30px rgb(0 229 255 / 10%);
+  background: linear-gradient(110deg, #10232a, #0a171c) !important;
+}
+
+.match.match-game::after {
+  transition: transform 240ms ease, border-color 180ms ease;
+}
+
+.match.match-game:hover::after {
+  transform: translate(-12px, 7px) rotate(35deg);
+  border-color: rgb(8 217 234 / 22%);
+}
+
+.schedule-value {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  align-items: baseline;
+  gap: 7px;
+}
+
+.schedule-value span {
+  color: #60757e;
+  font: 600 7px var(--body);
+  letter-spacing: 1.2px;
+}
+
+.schedule-value strong {
+  color: #f3f6f5;
+  font: 700 10px var(--head);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .match.match-game,
+  .match.match-game::after {
+    transition: none;
+  }
+
+  .match.match-game:hover {
+    transform: none;
+  }
+}
