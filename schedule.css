@@ -60,6 +60,50 @@ button.game-team:focus-visible strong {
   color: var(--cyan);
 }
 
+.player-drawer {
+  inset: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  padding: clamp(20px, 5vw, 70px);
+  display: grid;
+  place-items: center;
+  background: rgb(2 8 11 / 88%);
+  color: #041115;
+  backdrop-filter: blur(12px);
+  overflow-y: auto;
+}
+
+.roster-screen-card {
+  position: relative;
+  width: min(920px, 100%);
+  padding: clamp(24px, 4vw, 48px);
+  border-top: 3px solid var(--cyan);
+  background: var(--cyan);
+  box-shadow: 0 30px 90px rgb(0 0 0 / 55%);
+}
+
+.roster-screen-card > span {
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.roster-screen-card > h3 {
+  margin: 8px 0 28px;
+  font: 900 clamp(42px, 7vw, 72px) var(--head);
+}
+
+.roster-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  border: 0;
+  background: transparent;
+  color: #041115;
+  font-size: 34px;
+  cursor: pointer;
+}
+
 .player-drawer .match-roster-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -83,9 +127,24 @@ button.game-team:focus-visible strong {
   width: 46px;
   height: 46px;
   border: 1px solid rgb(0 0 0 / 22%);
-  background: #05090b;
+  background: var(--cyan);
   image-rendering: pixelated;
+  mix-blend-mode: screen;
   object-fit: cover;
+}
+
+@media (max-width: 620px) {
+  .player-drawer {
+    padding: 12px;
+  }
+
+  .roster-screen-card {
+    padding: 24px 18px;
+  }
+
+  .player-drawer .match-roster-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 .player-drawer .match-roster-list img.known-player {
