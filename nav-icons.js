@@ -1,7 +1,7 @@
 (() => {
   const mobileStyles = document.createElement('link');
   mobileStyles.rel = 'stylesheet';
-  mobileStyles.href = 'mobile.css?v=20260815-1';
+  mobileStyles.href = 'mobile.css?v=20260815-2';
   document.head.append(mobileStyles);
   const header = document.querySelector('header');
   if (!header) return;
