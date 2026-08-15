@@ -31,6 +31,7 @@ body[data-page="join"],body[data-page="legal"],body[data-page="admin"]{--page-pa
 .site-header a:hover .nav-raster-icon,.site-header a.active .nav-raster-icon{opacity:1;filter:saturate(1.15) drop-shadow(0 0 5px rgba(8,217,234,.28))}
 .site-header>.join-link{position:relative;z-index:3;margin-left:auto;display:flex;align-items:center;gap:8px;min-height:42px;padding:0 16px;border:1px solid rgba(8,217,234,.38);border-radius:9px;background:rgba(8,217,234,.075);color:#dffcff;font:750 9px var(--body);letter-spacing:1px;transition:background .18s ease,border-color .18s ease,transform .18s ease}
 .site-header>.join-link:hover{background:rgba(8,217,234,.15);border-color:rgba(8,217,234,.72);transform:translateY(-1px)}
+.site-header>.join-link,.site-header>.join-link:hover{border-color:transparent;background:transparent;box-shadow:none}
 .site-header>.join-link b{color:var(--cyan);font-size:13px}.mobile-discord-link{display:none!important}
 .site-header .menu{position:relative;z-index:4;width:44px;height:42px;margin-left:10px;padding:0;border:1px solid rgba(89,122,134,.35);border-radius:9px;background:rgba(13,31,39,.85)}
 .site-header .menu span{position:absolute;left:12px;width:18px;height:2px;border-radius:2px;background:#eafcff;transition:transform .2s ease,top .2s ease,opacity .2s ease}
