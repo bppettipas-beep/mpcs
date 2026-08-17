@@ -18,3 +18,29 @@ const teamList=document.getElementById('teamList');const teamSlots=input=>Array.
 function showPlayer(n,t){document.getElementById('playerTeam').textContent=t;document.getElementById('playerName').textContent=n;['playerElims','playerKD','playerWin'].forEach(x=>document.getElementById(x).textContent='—');document.getElementById('playerDrawer').classList.add('open')}const close=document.getElementById('closePlayer');if(close)close.onclick=()=>document.getElementById('playerDrawer').classList.remove('open');
 const groups=document.getElementById('groups');if(groups)groups.innerHTML=empty('QUALIFIERS NOT STARTED','Qualifier results will populate after the registration bracket begins. The top eight teams advance.');const bracket=document.getElementById('bracketGrid');if(bracket)bracket.innerHTML=empty('BRACKET LOCKED','The championship bracket opens after eight qualifier winners join the eight invited teams.');const leaders=document.getElementById('leaders');if(leaders)leaders.innerHTML=empty('NO PLAYER STATS YET','Leaderboards begin when Season One matches are played.');
 const finalScheduleStyles=document.createElement('style');finalScheduleStyles.textContent=`#matchList{display:grid!important;grid-template-columns:1fr!important;gap:12px!important}.match.match-game{display:grid!important;grid-template-columns:120px minmax(0,1fr) 105px minmax(0,1fr) 90px!important;align-items:center!important;min-height:112px!important;padding:0 22px!important;background:linear-gradient(110deg,#0d1a20,#091419)!important;border:1px solid #21343d!important;border-left:3px solid var(--cyan)!important}.game-meta{display:flex;flex-direction:column;gap:7px}.game-meta>b{color:var(--cyan);font:700 9px var(--body);letter-spacing:1.4px}.game-meta time{color:#fff;font:700 12px var(--head)}.game-meta time small{display:block;margin-top:4px;color:#6f838c;font:500 9px var(--body)}.game-team{display:flex;min-width:0;flex-direction:column;gap:7px}.game-team small{color:#627780;font:600 8px var(--body);letter-spacing:1.4px}.game-team strong{overflow:hidden;color:#fff;font:900 clamp(22px,2.2vw,31px) var(--head);text-overflow:ellipsis;white-space:nowrap}.game-team-left{text-align:right;align-items:flex-end}.game-team-right{text-align:left;align-items:flex-start}.game-center{text-align:center}.game-center span,.game-center small{display:block;color:#60757e;font:600 8px var(--body);letter-spacing:1.3px}.game-center b{display:block;margin:4px 0;color:#fff;font:900 17px var(--head)}.game-status{justify-self:end;padding:6px 8px;border:1px solid #08d9ea55;color:var(--cyan);font:700 8px var(--body);letter-spacing:1px}@media(max-width:720px){.match.match-game{grid-template-columns:1fr 55px 1fr!important;padding:17px!important;gap:12px 6px}.game-meta{grid-column:1/3}.game-status{grid-column:3;grid-row:1}.game-team-left{grid-column:1;grid-row:2}.game-center{grid-column:2;grid-row:2}.game-team-right{grid-column:3;grid-row:2}.game-team strong{font-size:18px}}`;document.head.appendChild(finalScheduleStyles);
+// RavenNetwork partnership announcement: first shown after five seconds, then every two minutes.
+(()=>{
+  const FIRST_DELAY=5000,REPEAT_DELAY=120000;
+  const overlay=document.createElement('div');
+  overlay.className='raven-partnership-popup';
+  overlay.setAttribute('aria-hidden','true');
+  overlay.innerHTML=`<section class="raven-partnership-card" role="dialog" aria-modal="true" aria-labelledby="raven-partnership-title">
+    <button class="raven-partnership-close" type="button" aria-label="Close RavenNetwork announcement">×</button>
+    <img src="images/raven-partnership.webp" alt="MPCS and RavenNetwork partnership for the $5,000 prize pool tournament">
+    <div class="raven-partnership-copy">
+      <span>OFFICIAL MAIN SPONSOR · MPCS SEASON 1</span>
+      <h2 id="raven-partnership-title">MEET <i>RAVENNETWORK.</i></h2>
+      <p>One network. Every player. Java and Bedrock crossplay, Unstable FFA, KitPvP, Practice, and a three-zone SMP—all launching August 21.</p>
+      <p class="raven-partnership-alpha"><b>Alpha is free and open now.</b> Claim the permanent alpha tag, cosmetics, and coin boost before launch.</p>
+      <a href="https://ravennetwork.net" target="_blank" rel="noopener">JOIN THE ALPHA →</a>
+    </div>
+  </section>`;
+  document.body.appendChild(overlay);
+  const card=overlay.querySelector('.raven-partnership-card'),close=()=>{overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');document.body.classList.remove('raven-popup-open')};
+  const open=()=>{overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');document.body.classList.add('raven-popup-open');overlay.querySelector('.raven-partnership-close').focus()};
+  overlay.querySelector('.raven-partnership-close').addEventListener('click',close);
+  overlay.addEventListener('click',event=>{if(event.target===overlay)close()});
+  card.addEventListener('click',event=>event.stopPropagation());
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&overlay.classList.contains('open'))close()});
+  window.setTimeout(()=>{open();window.setInterval(open,REPEAT_DELAY)},FIRST_DELAY);
+})();
