@@ -45,3 +45,29 @@ const finalScheduleStyles=document.createElement('style');finalScheduleStyles.te
   document.addEventListener('keydown',event=>{if(event.key==='Escape'&&overlay.classList.contains('open'))close()});
   window.setTimeout(()=>{open();window.setInterval(open,REPEAT_DELAY)},FIRST_DELAY);
 })();
+
+// Approval signups preserve the Substitute as roster slot 8. This is a
+// presentation-only label: no team or player data is changed here.
+(()=>{
+  const markSubstitutes=()=>{
+    document.querySelectorAll('.team-skin-roster').forEach(roster=>{
+      const button=roster.querySelectorAll(':scope > button')[7];
+      const name=button?.querySelector('span');
+      if(name&&!name.querySelector('.substitute-label')){
+        const label=document.createElement('small');
+        label.className='substitute-label';
+        label.textContent='SUBSTITUTE';
+        name.append(label);
+      }
+    });
+    document.querySelectorAll('.match-roster-list').forEach(roster=>{
+      const label=roster.querySelector(':scope > p:nth-child(8) span small');
+      if(label&&label.textContent!=='SUBSTITUTE')label.textContent='SUBSTITUTE';
+    });
+  };
+  const style=document.createElement('style');
+  style.textContent='.team-skin-roster .substitute-label{display:block;margin-top:3px;color:var(--cyan);font:700 7px var(--body);letter-spacing:1px}';
+  document.head.appendChild(style);
+  markSubstitutes();
+  new MutationObserver(markSubstitutes).observe(document.body,{childList:true,subtree:true});
+})();
